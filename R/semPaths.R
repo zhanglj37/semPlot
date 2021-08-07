@@ -1520,13 +1520,13 @@ semPaths <- function(object,what="paths",whatLabels,style,layout="tree",intercep
     lty <- rep(1,nrow(GroupPars))
     
     # fixedStyle
-    if (any(is.numeric(fixedStyle) | grepl("^\\d+$",fixedStyle))) lty <- ifelse(GroupPars$fixed,as.numeric(fixedStyle[is.numeric(fixedStyle) | grepl("^\\d+$",fixedStyle)]),lty) 
+    #if (any(is.numeric(fixedStyle) | grepl("^\\d+$",fixedStyle))) lty <- ifelse(GroupPars$fixed,as.numeric(fixedStyle[is.numeric(fixedStyle) | grepl("^\\d+$",fixedStyle)]),lty) 
     
     if (any(isColor(fixedStyle) & !(is.numeric(fixedStyle) | grepl("^\\d+$",fixedStyle)))) eColor[GroupPars$fixed] <- fixedStyle[isColor(fixedStyle) & !(is.numeric(fixedStyle) | grepl("^\\d+$",fixedStyle))]
     
     
     # freeStyle:
-    if (any(is.numeric(freeStyle) | grepl("\\d+",freeStyle))) lty <- ifelse(GroupPars$fixed,lty,as.numeric(freeStyle[is.numeric(freeStyle) | grepl("\\d+",freeStyle)]))
+    #if (any(is.numeric(freeStyle) | grepl("\\d+",freeStyle))) lty <- ifelse(GroupPars$fixed,lty,as.numeric(freeStyle[is.numeric(freeStyle) | grepl("\\d+",freeStyle)]))
     
     if (any(isColor(freeStyle) & !(is.numeric(freeStyle) | grepl("\\d+",freeStyle)))) eColor[!GroupPars$fixed] <- freeStyle[isColor(freeStyle) & !(is.numeric(freeStyle) | grepl("\\d+",freeStyle))]
     
